@@ -1,0 +1,24 @@
+{
+  "titulo": "¿Sabías que los perros también sueñan? 🐶💤",
+  "descripcion": "Si mueve las patitas dormido, probablemente está soñando… ¿y con quién? 👀 ¿El tuyo lo hace? 👇",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.05,
+  "animacion": "escenas/perros-suenan.py",
+  "escenas": [
+    {"pantalla": "Tu perro sueña… ¡como vos!", "destacar": "sueña",
+     "voz": "¿Viste cuando tu perro mueve las patitas mientras duerme? ¡No es casualidad! Probablemente está soñando."},
+    {"pantalla": "Tiene sueño REM, igual que vos", "destacar": "REM",
+     "voz": "Los perros tienen la misma fase de sueño que nosotros: la fase REM. Unos veinte minutos después de dormirse, sus ojos se mueven debajo de los párpados… y empieza el sueño."},
+    {"pantalla": "Sueña cosas de perro", "destacar": "perro",
+     "voz": "El psicólogo Stanley Coren dice que los perros sueñan cosas de perro: correr, perseguir pájaros… ¡o atrapar la pelota!"},
+    {"pantalla": "Los chiquitos sueñan más seguido", "destacar": "chiquitos",
+     "voz": "Y algo curioso: los perros chiquitos sueñan más seguido, hasta cada diez minutos. Los grandes, más o menos cada una hora… pero sus sueños duran más."},
+    {"pantalla": "Cachorros y abuelos se mueven más", "destacar": "abuelos",
+     "voz": "Los cachorros y los perros viejitos se mueven más cuando sueñan, porque la parte del cerebro que frena los movimientos no funciona tan bien."},
+    {"pantalla": "¿Y si sueña con vos?", "destacar": "vos",
+     "voz": "Y lo más lindo: una psicóloga de Harvard cree que, como son tan apegados a nosotros, probablemente sueñan con tu cara… y con tu olor."},
+    {"pantalla": "¿El tuyo se mueve dormido?", "destacar": "dormido",
+     "voz": "¿Tu perro mueve las patas cuando duerme? Contame en los comentarios… ¡y seguime para más curiosidades!"}
+  ],
+  "hashtags": ["#perros", "#mascotas", "#sabiasque", "#curiosidades", "#perro", "#sueños", "#fyp", "#parati"]
+}
