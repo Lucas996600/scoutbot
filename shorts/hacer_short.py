@@ -160,6 +160,12 @@ def main():
         ruleta.mezclar(final, sfx, tmp, vol=g.get("volumen_ruleta", 0.8))
         os.replace(tmp, final)
 
+    # volumen estándar de redes (-15 LUFS)
+    tmp = final + ".norm.mp4"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", final, "-af", "loudnorm=I=-15:TP=-1.5:LRA=11", "-c:v", "copy",
+                    "-c:a", "aac", "-b:a", "192k", tmp], check=True)
+    os.replace(tmp, final)
+
     print("4/4 Texto para publicar…", flush=True)
     with open(os.path.join(salida, "publicacion.txt"), "w", encoding="utf-8") as f:
         f.write(g.get("titulo", nombre) + "\n\n" + g.get("descripcion", "") + "\n\n" + " ".join(g.get("hashtags", [])) + "\n")

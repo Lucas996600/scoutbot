@@ -1,0 +1,24 @@
+{
+  "titulo": "¿Por qué los loros pueden hablar como nosotros? 🦜",
+  "descripcion": "No tienen cuerdas vocales… y aun así dicen tu nombre. ¿Tu loro qué palabra dice? 👇",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.08,
+  "animacion": "escenas/loros-hablan.py",
+  "escenas": [
+    {"pantalla": "Tu loro no tiene cuerdas vocales", "destacar": "cuerdas",
+     "voz": "¿Sabías que tu loro no tiene cuerdas vocales… y aun así puede decir tu nombre?"},
+    {"pantalla": "Habla con la siringe", "destacar": "siringe",
+     "voz": "Las aves no hablan con la garganta como nosotros. Tienen la siringe: un órgano al fondo de la tráquea que vibra con el aire."},
+    {"pantalla": "El truco está en la lengua", "destacar": "lengua",
+     "voz": "Pero los loros tienen un truco: una lengua gruesa y musculosa, que mueven como nosotros para darle forma a cada sonido."},
+    {"pantalla": "Un cerebro con capa extra", "destacar": "cerebro",
+     "voz": "Y su cerebro es especial. En dos mil quince descubrieron que tienen una capa extra alrededor de sus centros del canto… y se cree que por eso imitan tan bien."},
+    {"pantalla": "Imitan para pertenecer", "destacar": "pertenecer",
+     "voz": "En la selva, cada bandada tiene sus propios llamados, y los loros los copian para encajar. En tu casa… ¡la bandada sos vos!"},
+    {"pantalla": "Récord: 1.728 palabras", "destacar": "palabras",
+     "voz": "¿Y el récord? Lo tiene Puck, un periquito que llegó a decir ¡mil setecientas veintiocho palabras!"},
+    {"pantalla": "¿El tuyo qué dice?", "destacar": "dice",
+     "voz": "¿Tu loro dice alguna palabra? Contame cuál en los comentarios… ¡y seguime para más curiosidades!"}
+  ],
+  "hashtags": ["#loros", "#pericos", "#aves", "#sabiasque", "#curiosidades", "#mascotas", "#fyp", "#parati"]
+}
