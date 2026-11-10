@@ -46,9 +46,11 @@ Escribí un módulo con `def escena(c, i, lt, gt, dur, esc)` que dibuje la escen
 python3 shorts/hacer_short.py shorts/guiones/<slug>.json
 ```
 ~4 min. Salida en `shorts/salida/<slug>/`: `<slug>.mp4`, `<slug>.srt`, `publicacion.txt`.
+- La música es **original**: `shorts/motor/musica.py` la sintetiza para cada video (semilla = nombre, o `"semilla_musica"` en el guion para cambiarla). Nunca usar las canciones de `resource/songs` de MoneyPrinterTurbo: dan reclamos de Content ID en YouTube.
 
 ## 5. Revisar y entregar
 - Sacá 6–8 cuadros del mp4 con ffmpeg (`hstack`) y miralos: subtítulos legibles, título completo, escena correcta para lo que dice la voz.
 - Mandá el `.mp4` con SendUserFile y pegá `publicacion.txt` en el chat listo para copiar.
+- Recordá: al subir a YouTube elegir **"No, no es contenido creado para niños"** (si no, se desactivan comentarios y notificaciones).
 - Decí con honestidad lo que no haya salido o datos que sean teoría.
 - Commiteá guion + escenas (no `shorts/salida/`, que está en .gitignore).

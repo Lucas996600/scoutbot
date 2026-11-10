@@ -6,7 +6,7 @@ Uso:
 Pasos:
   1. MoneyPrinterTurbo genera la voz (Edge TTS) y los subtítulos por palabra (--stop-at subtitle).
   2. Con los tiempos de cada palabra se calcula cuánto dura cada escena.
-  3. El motor reel_textos dibuja un clip por escena con esa duración exacta.
+  3. El motor dibuja un clip por escena con esa duración exacta y se compone música original.
   4. MoneyPrinterTurbo arma el video final con esos clips, voz, subtítulos y música.
 """
 import argparse
@@ -24,6 +24,8 @@ REPO = os.path.dirname(AQUI)
 sys.path.insert(0, os.path.join(AQUI, "motor"))
 import reel_textos  # noqa: E402
 import reel_ilustrado  # noqa: E402
+import musica  # noqa: E402
+import zlib  # noqa: E402
 
 MPT = os.environ.get("MPT_DIR", os.path.join(os.path.dirname(REPO), "tools", "MoneyPrinterTurbo"))
 CA = "/root/.ccr/ca-bundle.crt"
@@ -116,12 +118,17 @@ def main():
     else:
         clips = reel_textos.render_clips(g, durs, os.path.join(salida, "clips"))
 
+    # música original sintetizada (las canciones que trae MoneyPrinterTurbo dan reclamos de Content ID)
+    bgm = f"original-{nombre}.mp3"
+    semilla = g.get("semilla_musica", zlib.crc32(nombre.encode()))
+    musica.guardar(os.path.join(MPT, "storage", "bgm", bgm), total + 4, semilla)
+
     print("3/4 Armando el video final…", flush=True)
     t2 = str(uuid.uuid4())
     mpt(comunes + ["--video-terms", nombre, "--video-source", "local", "--video-materials", ",".join(clips),
                    "--video-concat-mode", "sequential", "--video-transition-mode", "none",
                    "--video-clip-duration", str(math.ceil(max(durs)) + 1),
-                   "--bgm-type", "random", "--bgm-volume", str(g.get("volumen_musica", 0.15)),
+                   "--bgm-type", "custom", "--bgm-file", bgm, "--bgm-volume", str(g.get("volumen_musica", 0.18)),
                    "--font-name", "BeVietnamPro-Bold.ttf", "--font-size", "84",
                    "--text-fore-color", "#FFFFFF", "--stroke-color", "#000000", "--stroke-width", "2.5",
                    "--subtitle-position", "custom", "--custom-position", str(g.get("posicion_subtitulos", 86 if g.get("animacion") else 76)),
@@ -137,6 +144,7 @@ def main():
     print("4/4 Texto para publicar…", flush=True)
     with open(os.path.join(salida, "publicacion.txt"), "w", encoding="utf-8") as f:
         f.write(g.get("titulo", nombre) + "\n\n" + g.get("descripcion", "") + "\n\n" + " ".join(g.get("hashtags", [])) + "\n")
+        f.write("\n---\nAl subir: Público → 'No, no es contenido creado para niños'. Música: original, generada para este video.\n")
     print(f"LISTO: {final}  (desfase de voz entre pasadas: {desfase:+.2f} s)")
 
 
