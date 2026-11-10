@@ -60,3 +60,14 @@ python3 shorts/hacer_short.py shorts/guiones/<slug>.json
 - Estilo de la serie: `"estilo": "tinta"` en el guion (caricatura plana con contornos gruesos de tinta, títulos con letras gordas extruidas coral/rosa, palabra clave verde lima, destellos de 4 puntas; referencia que dio el usuario). Personajes y objetos: `motor/cartoon3d.py` (esfera, personaje cabezón, edificio con caras, sol con cara, murciélago, delfín, pingüino, pez, termómetro) y la mascota `ruleta.globi(...)`. Ver `escenas/mundo-sin-luz.py`.
 - Estructura: ruleta → revelación (desaparece) → primeras consecuencias → consecuencias extremas (ciencia real) → final con revelación + pregunta. 6–8 escenas, ~40–55 s.
 - Los 30 elementos propuestos: agua, luz, viento, árboles, lluvia, Luna, nubes, abejas, oxígeno, volcanes, ojos, oído, dolor, sueño, olfato, huesos, memoria, internet, electricidad, ruedas, plástico, dinero, relojes, gravedad, Sol, fricción, colores, noche, silencio, números.
+
+### Formato con DIÁLOGOS (el que pidió el usuario para la serie — usar este por defecto en `MUNDO SIN:`)
+Referencia: caricatura "garabato" (personajes blancos y pelados, ojos grandes con párpado caído, pastel apagado, líneas finas),
+la escena en una FRANJA horizontal en el medio, fondo violeta con estrellitas, título arriba y subtítulos con el nombre de quien habla abajo.
+Humor seco y absurdo con situaciones del tema + un narrador con los datos reales.
+- Guion: `shorts/guiones/<slug>.json` con `"personajes"` (voz/velocidad/tono/color/nombre) y escenas con `"lineas": [{"quien","texto"}]`
+  (ver `guiones/mundo-sin-luz-dialogo.json`). Escena 1 `"formato": "completo"` con la ruleta; la última línea de la escena 1 termina en el elemento.
+- Escenas: `shorts/escenas/<slug>.py` dibujando en 1920x1080 con `motor/doodle.py` (persona(boca=esc["_habla"].get(quien)), banco, árbol, fondo_parque, murciélago).
+- Generar: `cd shorts/motor && python3 reel_dialogo.py ../guiones/<slug>.json` (voces con caché, música original, sonido de la ruleta).
+- Voces probadas: narrador Remy (+14%), Tito es-AR-TomasNeural (+10%, seco), abuelo Giuseppe (-12Hz), voces chistosas con tono alto (Elena +35Hz, Florian +15Hz).
+- Apuntar a 45–60 s: líneas cortas, chistes de 2–4 réplicas, narrador con 1 dato por escena.

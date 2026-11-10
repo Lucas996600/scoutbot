@@ -1,0 +1,165 @@
+{
+  "titulo": "¿Cómo sería el mundo sin LUZ? 🌑",
+  "descripcion": "El abuelo no entendió nada de la fotosíntesis 😂 ¿Qué extrañarías primero vos? La ruleta decide el próximo episodio 🎡",
+  "animacion": "escenas/mundo-sin-luz-dialogo.py",
+  "ruleta": "luz",
+  "estilo": "tinta",
+  "personajes": {
+    "narrador": {
+      "voz": "fr-FR-RemyMultilingualNeural",
+      "velocidad": "+14%",
+      "color": "#E9FF8A",
+      "nombre": ""
+    },
+    "tito": {
+      "voz": "es-AR-TomasNeural",
+      "velocidad": "+10%",
+      "color": "#7FE3FF",
+      "nombre": "TITO"
+    },
+    "abuelo": {
+      "voz": "it-IT-GiuseppeMultilingualNeural",
+      "velocidad": "+4%",
+      "tono": "-12Hz",
+      "color": "#FFB38A",
+      "nombre": "ABUELO"
+    },
+    "murcielago": {
+      "voz": "es-AR-ElenaNeural",
+      "velocidad": "+18%",
+      "tono": "+35Hz",
+      "color": "#C9B8FF",
+      "nombre": "MURCIÉLAGO"
+    },
+    "gusano": {
+      "voz": "de-DE-FlorianMultilingualNeural",
+      "velocidad": "+15%",
+      "tono": "+15Hz",
+      "color": "#FF8A95",
+      "nombre": "GUSANO"
+    }
+  },
+  "escenas": [
+    {
+      "formato": "completo",
+      "pantalla": "¿Cómo sería el mundo sin…?",
+      "destacar": "mundo",
+      "lineas": [
+        {
+          "quien": "narrador",
+          "texto": "Hoy vamos a descubrir cómo sería el mundo sin… ¡LUZ!"
+        }
+      ],
+      "pausa_final": 0.3
+    },
+    {
+      "pantalla": "Se apaga TODO",
+      "destacar": "TODO",
+      "lineas": [
+        {
+          "quien": "tito",
+          "texto": "Che… ¿se cortó la luz?"
+        },
+        {
+          "quien": "abuelo",
+          "texto": "No, nene. Se cortó LA luz. Toda."
+        },
+        {
+          "quien": "narrador",
+          "texto": "Sin luz, no vemos nada."
+        }
+      ],
+      "pausa_final": 0.3
+    },
+    {
+      "pantalla": "Los ganadores",
+      "destacar": "ganadores",
+      "lineas": [
+        {
+          "quien": "tito",
+          "texto": "¡Ay! ¿Quién puso un árbol acá?"
+        },
+        {
+          "quien": "murcielago",
+          "texto": "Permiso, permiso… yo me guío por sonido."
+        },
+        {
+          "quien": "narrador",
+          "texto": "Murciélagos y delfines se guían por sonido: ellos, tranquilos."
+        }
+      ],
+      "pausa_final": 0.3
+    },
+    {
+      "pantalla": "Sin fotosíntesis",
+      "destacar": "fotosíntesis",
+      "lineas": [
+        {
+          "quien": "abuelo",
+          "texto": "Mis tomates… se están muriendo."
+        },
+        {
+          "quien": "tito",
+          "texto": "Abuelo, sin luz no hay fotosíntesis."
+        },
+        {
+          "quien": "abuelo",
+          "texto": "¿Y eso con qué se come?"
+        },
+        {
+          "quien": "tito",
+          "texto": "Con nada. Ese es el problema."
+        },
+        {
+          "quien": "narrador",
+          "texto": "Sin plantas, se corta casi toda la cadena de alimentos."
+        }
+      ],
+      "pausa_final": 0.3
+    },
+    {
+      "pantalla": "Y llega el frío",
+      "destacar": "frío",
+      "lineas": [
+        {
+          "quien": "narrador",
+          "texto": "Y casi todo el calor del Sol llega como luz: en un año, el planeta podría rondar los setenta bajo cero."
+        },
+        {
+          "quien": "tito",
+          "texto": "Abuelo… ¿me pasás la frazada?",
+          "pausa": 0.8
+        },
+        {
+          "quien": "tito",
+          "texto": "¿Abuelo?"
+        }
+      ],
+      "pausa_final": 0.3
+    },
+    {
+      "pantalla": "Pero alguien sigue de fiesta",
+      "destacar": "fiesta",
+      "lineas": [
+        {
+          "quien": "gusano",
+          "texto": "¿Luz? Nunca la necesitamos. ¡Que siga la fiesta!"
+        },
+        {
+          "quien": "narrador",
+          "texto": "En el fondo del mar hay vida que no depende del Sol. ¿Qué extrañarías vos?"
+        }
+      ],
+      "pausa_final": 0.3
+    }
+  ],
+  "hashtags": [
+    "#quepasariasi",
+    "#sinluz",
+    "#humor",
+    "#ciencia",
+    "#curiosidades",
+    "#animacion",
+    "#fyp"
+  ]
+}
