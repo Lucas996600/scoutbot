@@ -29,6 +29,7 @@ import zlib  # noqa: E402
 
 MPT = os.environ.get("MPT_DIR", os.path.join(os.path.dirname(REPO), "tools", "MoneyPrinterTurbo"))
 CA = "/root/.ccr/ca-bundle.crt"
+VOZ_POR_DEFECTO = "fr-FR-RemyMultilingualNeural"  # la más expresiva en español (ver SKILL.md)
 
 
 def mpt(args, log):
@@ -95,10 +96,14 @@ def main():
     log = os.path.join(salida, "proceso.log")
     open(log, "w").close()
 
-    voz = a.voz or g.get("voz", "es-AR-TomasNeural")
+    voz = a.voz or g.get("voz", VOZ_POR_DEFECTO)
     genero = g.get("voz_genero") or ("Female" if any(n in voz for n in ("Elena", "Dalia", "Elvira", "Ximena", "Sofia", "Valentina", "Ava", "Emma", "Seraphina")) else "Male")
-    vel = a.velocidad or g.get("velocidad", 1.2)
-    guion_txt = " ".join(e["voz"].strip() for e in g["escenas"])
+    vel = a.velocidad or g.get("velocidad", 1.05)
+    # Pausas naturales: entre escenas y entre oraciones. MoneyPrinterTurbo sintetiza cada tramo por separado
+    # (las voces Multilingual no se cuelgan con textos cortos) y une los tiempos de cada palabra.
+    def con_pausas(txt):
+        return re.sub(r"([.!?…])\s+(?=\S)", r"\1 [pause: 0.25s] ", txt.strip())
+    guion_txt = " [pause: 0.45s] ".join(con_pausas(e["voz"]) for e in g["escenas"])
     comunes = ["--video-script", guion_txt, "--video-language", "es", "--video-aspect", "9:16",
                "--voice-name", f"{voz}-{genero}", "--voice-rate", str(vel)]
 

@@ -17,7 +17,7 @@ Si no existe `../tools/MoneyPrinterTurbo/.venv` (al lado del repo), corré `bash
 
 ## 2. Guion → `shorts/guiones/<slug>.json`
 ```json
-{ "titulo": "...", "descripcion": "...", "voz": "es-AR-TomasNeural", "velocidad": 1.1,
+{ "titulo": "...", "descripcion": "...", "voz": "fr-FR-RemyMultilingualNeural", "velocidad": 1.05,
   "animacion": "escenas/<slug>.py",
   "escenas": [ { "pantalla": "...", "destacar": "palabra", "voz": "..." } ],
   "hashtags": ["#sabiasque", "..."] }
@@ -28,7 +28,7 @@ Si no existe `../tools/MoneyPrinterTurbo/.venv` (al lado del repo), corré `bash
 - `pantalla` ≤ 7 palabras. `destacar` = una palabra de `pantalla`. `voz` 1–2 oraciones, rioplatense, números raros escritos en letras.
 - Última escena: pregunta para comentarios + "seguime para más".
 - **Solo datos verdaderos.** Si dudás, buscá en la web; si no se puede confirmar, decilo como teoría o sacalo.
-- Voces que funcionan: es-AR-TomasNeural (hombre, por defecto), es-AR-ElenaNeural (mujer), es-MX-JorgeNeural, es-MX-DaliaNeural. Las "Multilingual" (Andrew, Ava) se cuelgan con textos largos: no usarlas.
+- Voz por defecto: **fr-FR-RemyMultilingualNeural** a 1.05 (voz "Multilingual": mucho más expresiva que Tomás, que suena robótica). Alternativas probadas: it-IT-GiuseppeMultilingualNeural, en-AU-WilliamMultilingualNeural, de-DE-FlorianMultilingualNeural (hombres); es-AR-TomasNeural / es-AR-ElenaNeural solo si piden acento argentino. `hacer_short.py` mete pausas `[pause: …]` entre escenas y oraciones, así cada tramo se sintetiza corto (las Multilingual se colgaban con textos largos) y la narración respira. Escribí la `voz` con puntuación expresiva (¿?, ¡!, …) porque estas voces la interpretan.
 
 ## 3. Animación → `shorts/escenas/<slug>.py`
 Escribí un módulo con `def escena(c, i, lt, gt, dur, esc)` que dibuje la escena `i` (ver `shorts/escenas/gatos-ronronean.py` como modelo). Usá `shorts/motor/dibujo.py` (Skia): `fondo`, `cielo`, `sol`, `luna`, `estrellas`, `nubes`, `montanas`, `colinas`, `pino`, `agua`, `rayos_luz`, `burbujas`, `particulas`, `lluvia`, `nieve`, `figura` (formas suaves), `circulo`, `elipse`, `rect`, `linea`, `brillo`, `camara` (zoom/paneo), `onda_sonido`, `anillos`, `flecha`, `etiqueta` (cartel con línea a un punto), `contador`, `lupa` (zoom circular con contenido propio), `emoji` (solo como apoyo), `texto`, easing (`ease`, `ease_out`, `ease_out_back`, `aparece`).
