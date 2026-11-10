@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.join(AQUI, "motor"))
 import reel_textos  # noqa: E402
 import reel_ilustrado  # noqa: E402
 import musica  # noqa: E402
+import ruleta  # noqa: E402
 import zlib  # noqa: E402
 
 MPT = os.environ.get("MPT_DIR", os.path.join(os.path.dirname(REPO), "tools", "MoneyPrinterTurbo"))
@@ -116,6 +117,14 @@ def main():
     durs = duraciones_por_escena(g["escenas"], cues, total)
     print(f"   audio {total:.1f} s · escenas {durs}", flush=True)
 
+    if g.get("ruleta"):  # la ruleta frena justo antes de que la voz diga el elemento elegido
+        ultima = norm(g["escenas"][0]["voz"].split()[-1])
+        fin0 = durs[0]
+        for (a_, z_, txt) in cues:
+            if a_ < fin0 and norm(txt) == ultima:
+                ruleta.T_FRENO = max(1.5, a_ - 0.15)
+        print(f"   ruleta frena en {ruleta.T_FRENO} s", flush=True)
+
     print("2/4 Animando escenas…", flush=True)
     if g.get("animacion"):
         anim = g["animacion"] if os.path.isabs(g["animacion"]) else os.path.join(AQUI, g["animacion"])
@@ -145,6 +154,11 @@ def main():
     shutil.copy(os.path.join(tarea2, "final-1.mp4"), final)
     shutil.copy(os.path.join(tarea2, "subtitle.srt"), os.path.join(salida, f"{nombre}.srt"))
     desfase = duracion_audio(os.path.join(tarea2, "audio.mp3")) - total
+    if g.get("ruleta"):  # sonido de marca de la ruleta (tics, ding, whoosh) sincronizado con la escena 1
+        sfx = ruleta.sfx(os.path.join(salida, "sfx_ruleta.wav"), durs[0], g["ruleta"], total=durs[0] + 2.5)
+        tmp = final + ".tmp.mp4"
+        ruleta.mezclar(final, sfx, tmp, vol=g.get("volumen_ruleta", 0.8))
+        os.replace(tmp, final)
 
     print("4/4 Texto para publicar…", flush=True)
     with open(os.path.join(salida, "publicacion.txt"), "w", encoding="utf-8") as f:

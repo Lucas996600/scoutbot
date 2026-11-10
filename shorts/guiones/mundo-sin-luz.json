@@ -1,0 +1,25 @@
+{
+  "titulo": "¿Qué pasaría si la LUZ desapareciera para siempre? 🌑",
+  "descripcion": "Sin sol, sin plantas, sin calor… pero hay alguien a quien no le importaría 👀 La ruleta decide el próximo episodio 🎡",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.08,
+  "ruleta": "luz",
+  "animacion": "escenas/mundo-sin-luz.py",
+  "escenas": [
+    {"pantalla": "¿Cómo sería el mundo sin…?", "destacar": "mundo",
+     "voz": "Hoy vamos a descubrir cómo sería el mundo sin… ¡LUZ!"},
+    {"pantalla": "Negro total", "destacar": "Negro",
+     "voz": "En un instante, todo se apaga. Ni sol, ni lámparas, ni pantallas. ¡Negro total!"},
+    {"pantalla": "Nadie ve nada", "destacar": "nada",
+     "voz": "Nadie ve nada. Pero los murciélagos y los delfines, que se guían por sonido, pasan a ser los reyes."},
+    {"pantalla": "Las plantas se mueren de hambre", "destacar": "hambre",
+     "voz": "Y las plantas dejan de fabricar su comida: sin luz, no hay fotosíntesis."},
+    {"pantalla": "Llega el frío", "destacar": "frío",
+     "voz": "Pero lo peor es el frío. Casi todo el calor del Sol nos llega como luz. Según estimaciones, en pocas semanas el planeta bajaría de cero… y en un año, podría rondar los setenta grados bajo cero."},
+    {"pantalla": "Los mares se congelan", "destacar": "congelan",
+     "voz": "Los mares se congelan por arriba… aunque abajo del hielo, el agua sigue líquida."},
+    {"pantalla": "Pero alguien hace fiesta", "destacar": "fiesta",
+     "voz": "Y aun así, la vida sigue. En el fondo del océano, junto a volcanes submarinos, hay animales que nunca necesitaron luz. ¿Qué extrañarías primero vos?"}
+  ],
+  "hashtags": ["#quepasariasi", "#sinluz", "#ciencia", "#curiosidades", "#sabiasque", "#animacion", "#fyp", "#parati"]
+}
