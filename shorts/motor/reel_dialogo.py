@@ -33,7 +33,7 @@ BW, BH = 1920, 1080
 ESC = W / BW
 BY0 = (H - BH * ESC) / 2 - 40  # franja un poco arriba del centro: deja más lugar abajo para subtítulos
 FONDO, ESTRELLAS = "#170D33", ("#C8F27A", "#7FE3D0", "#FFFFFF")
-PAUSA_LINEA, PAUSA_ESCENA = 0.18, 0.3
+PAUSA_LINEA, PAUSA_ESCENA = 0.14, 0.25
 
 
 def armar_audio(g):
@@ -44,6 +44,7 @@ def armar_audio(g):
         for ln in esc["lineas"]:
             p = pers[ln["quien"]]
             audio, pal = voces.sintetizar(ln["texto"], p["voz"], p.get("velocidad", "+0%"), p.get("tono", "+0Hz"))
+            audio = _nivelar(audio)
             pista.append((t, audio))
             dur = len(audio) / voces.SR
             lineas.append(dict(escena=i, quien=ln["quien"], texto=ln["texto"], t0=t, t1=t + dur,
@@ -57,6 +58,18 @@ def armar_audio(g):
         i = int(t_ * voces.SR)
         voz[i:i + len(a)] += a[: len(voz) - i]
     return voz, lineas, escenas, total
+
+
+def _nivelar(a, objetivo=0.085):
+    """Todas las voces al mismo volumen (RMS de las partes habladas) y sin picos."""
+    if len(a) == 0:
+        return a
+    tramos = a[: len(a) // 240 * 240].reshape(-1, 240)
+    rms = np.sqrt((tramos ** 2).mean(axis=1))
+    hablado = rms[rms > rms.max() * 0.15]
+    nivel = np.sqrt((hablado ** 2).mean()) if len(hablado) else 1e-3
+    a = a * (objetivo / max(nivel, 1e-4))
+    return np.tanh(a * 1.2) / 1.2  # limitador suave
 
 
 def boca(lineas, t):
@@ -184,7 +197,7 @@ def hacer(ruta_guion, salida=None):
     n_p = pistas.count("[")
     final = os.path.join(salida, f"{nombre}.mp4")
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}", "-r", str(FPS),
-                           "-i", "-", *entradas, "-filter_complex", f"{mezcla};{pistas}amix=inputs={n_p}:duration=first:normalize=0[a]",
+                           "-i", "-", *entradas, "-filter_complex", f"{mezcla};{pistas}amix=inputs={n_p}:duration=first:normalize=0[a0];[a0]loudnorm=I=-15:TP=-1.5:LRA=11[a]",
                            "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
                            "-c:a", "aac", "-b:a", "192k", "-shortest", final], stdin=subprocess.PIPE)
     info = skia.ImageInfo.Make(W, H, skia.kRGBA_8888_ColorType, skia.kPremul_AlphaType)

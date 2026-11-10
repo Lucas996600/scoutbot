@@ -5,36 +5,33 @@
   "ruleta": "luz",
   "estilo": "tinta",
   "personajes": {
-    "narrador": {
-      "voz": "fr-FR-RemyMultilingualNeural",
-      "velocidad": "+14%",
-      "color": "#E9FF8A",
-      "nombre": ""
+    "globi": {
+      "voz": "en-US-AvaMultilingualNeural",
+      "velocidad": "+8%",
+      "color": "#7FC4FF",
+      "nombre": "GLOBI"
     },
     "tito": {
-      "voz": "es-AR-TomasNeural",
-      "velocidad": "+10%",
+      "voz": "fr-FR-RemyMultilingualNeural",
+      "velocidad": "+8%",
       "color": "#7FE3FF",
       "nombre": "TITO"
     },
     "abuelo": {
-      "voz": "it-IT-GiuseppeMultilingualNeural",
-      "velocidad": "+4%",
-      "tono": "-12Hz",
+      "voz": "en-AU-WilliamMultilingualNeural",
+      "velocidad": "-2%",
       "color": "#FFB38A",
       "nombre": "ABUELO"
     },
     "murcielago": {
-      "voz": "es-AR-ElenaNeural",
-      "velocidad": "+18%",
-      "tono": "+35Hz",
+      "voz": "en-US-EmmaMultilingualNeural",
+      "velocidad": "+10%",
       "color": "#C9B8FF",
       "nombre": "MURCIÉLAGO"
     },
     "gusano": {
-      "voz": "de-DE-FlorianMultilingualNeural",
-      "velocidad": "+15%",
-      "tono": "+15Hz",
+      "voz": "pt-BR-ThalitaMultilingualNeural",
+      "velocidad": "+8%",
       "color": "#FF8A95",
       "nombre": "GUSANO"
     }
@@ -46,11 +43,11 @@
       "destacar": "mundo",
       "lineas": [
         {
-          "quien": "narrador",
-          "texto": "Hoy vamos a descubrir cómo sería el mundo sin… ¡LUZ!"
+          "quien": "globi",
+          "texto": "¡Hoy vamos a descubrir cómo sería el mundo sin… LUZ!"
         }
       ],
-      "pausa_final": 0.3
+      "pausa_final": 0.25
     },
     {
       "pantalla": "Se apaga TODO",
@@ -62,14 +59,18 @@
         },
         {
           "quien": "abuelo",
-          "texto": "No, nene. Se cortó LA luz. Toda."
+          "texto": "No, nene. Se cortó LA luz. Toda. Hasta la del Sol."
         },
         {
-          "quien": "narrador",
-          "texto": "Sin luz, no vemos nada."
+          "quien": "tito",
+          "texto": "¡Pero no veo absolutamente nada!"
+        },
+        {
+          "quien": "abuelo",
+          "texto": "Bienvenido a mi vida sin anteojos."
         }
       ],
-      "pausa_final": 0.3
+      "pausa_final": 0.25
     },
     {
       "pantalla": "Los ganadores",
@@ -81,14 +82,14 @@
         },
         {
           "quien": "murcielago",
-          "texto": "Permiso, permiso… yo me guío por sonido."
+          "texto": "Permiso, permiso… Yo me guío por sonido, ¿sabés? Los delfines también."
         },
         {
-          "quien": "narrador",
-          "texto": "Murciélagos y delfines se guían por sonido: ellos, tranquilos."
+          "quien": "tito",
+          "texto": "Mirá vos… qué agrandada."
         }
       ],
-      "pausa_final": 0.3
+      "pausa_final": 0.25
     },
     {
       "pantalla": "Sin fotosíntesis",
@@ -100,7 +101,7 @@
         },
         {
           "quien": "tito",
-          "texto": "Abuelo, sin luz no hay fotosíntesis."
+          "texto": "Y sí, abuelo. Sin luz no hay fotosíntesis: las plantas no pueden fabricar su comida."
         },
         {
           "quien": "abuelo",
@@ -108,34 +109,30 @@
         },
         {
           "quien": "tito",
-          "texto": "Con nada. Ese es el problema."
-        },
-        {
-          "quien": "narrador",
-          "texto": "Sin plantas, se corta casi toda la cadena de alimentos."
+          "texto": "Con nada. Ese es el problema. Sin plantas, nos quedamos sin comida todos."
         }
       ],
-      "pausa_final": 0.3
+      "pausa_final": 0.25
     },
     {
       "pantalla": "Y llega el frío",
       "destacar": "frío",
       "lineas": [
         {
-          "quien": "narrador",
-          "texto": "Y casi todo el calor del Sol llega como luz: en un año, el planeta podría rondar los setenta bajo cero."
+          "quien": "tito",
+          "texto": "Abuelo… casi todo el calor del Sol nos llega como luz. Dicen que en un año esto podría llegar a setenta bajo cero."
         },
         {
           "quien": "tito",
-          "texto": "Abuelo… ¿me pasás la frazada?",
-          "pausa": 0.8
+          "texto": "¿Me pasás la frazada?",
+          "pausa": 1.0
         },
         {
           "quien": "tito",
           "texto": "¿Abuelo?"
         }
       ],
-      "pausa_final": 0.3
+      "pausa_final": 0.25
     },
     {
       "pantalla": "Pero alguien sigue de fiesta",
@@ -143,14 +140,14 @@
       "lineas": [
         {
           "quien": "gusano",
-          "texto": "¿Luz? Nunca la necesitamos. ¡Que siga la fiesta!"
+          "texto": "¿Luz? Acá abajo nunca la necesitamos. ¡El volcán nos da todo!"
         },
         {
-          "quien": "narrador",
-          "texto": "En el fondo del mar hay vida que no depende del Sol. ¿Qué extrañarías vos?"
+          "quien": "gusano",
+          "texto": "¿Y ustedes qué extrañarían primero? ¡Cuéntenme en los comentarios!"
         }
       ],
-      "pausa_final": 0.3
+      "pausa_final": 0.25
     }
   ],
   "hashtags": [
