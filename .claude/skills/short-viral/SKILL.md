@@ -10,7 +10,7 @@ Palabra clave: `SHORT: <tema>` (o `REEL: <tema>`). Opcional en el mismo mensaje:
 Lo que el usuario quiere (no negociable):
 - **El video MUESTRA de lo que se habla.** Si se habla de montañas se ven montañas; de un gato, el gato; de la laringe, una lupa con la laringe. Nada de reels de solo texto, nada de fondos genéricos.
 - **Sin barras de historias, sin chips, sin "Paso 1/Paso 2".** Arriba solo el dato curioso (`pantalla`) con una palabra en amarillo.
-- Aspecto profesional y atractivo, en 2D vectorial (como `shorts/escenas/gatos-ronronean.py`).
+- Aspecto profesional y atractivo, en 2D vectorial animado (como `shorts/escenas/gatos-ronronean.py`). **No usar fotos ni imágenes de IA (Higgsfield) animadas con zoom**: al usuario no le gustó ese estilo (`motor/foto.py` queda solo si lo pide explícitamente).
 
 ## 1. Instalación (solo si falta)
 Si no existe `../tools/MoneyPrinterTurbo/.venv` (al lado del repo), corré `bash shorts/instalar.sh`.
