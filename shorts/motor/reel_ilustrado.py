@@ -21,6 +21,17 @@ import dibujo as d
 
 W, H, FPS = d.W, d.H, 30
 AMARILLO = "#FFD400"
+ESTILO = {"nombre": "normal"}
+TINTA_TXT = dict(relleno="#FF7A85", extrusion="#E0408A", tinta="#2B0B3F", destacado="#E9FF8A")
+
+
+def aplicar_estilo(guion):
+    """"estilo": "tinta" en el guion = cómic plano con contornos gruesos + títulos con letras extruidas."""
+    ESTILO["nombre"] = guion.get("estilo", "normal")
+    if ESTILO["nombre"] == "tinta":
+        d.activar_tinta()
+    else:
+        d.TINTA = None
 
 
 def cargar_modulo(ruta):
@@ -52,13 +63,25 @@ def titulo(c, txt, destacar, lt, y_base=250):
         x = (W - total) / 2
         y = y_base + k * tam * 1.12 + dy
         for p in palabras:
-            color = AMARILLO if _norm(p) in marcadas and marcadas else "#FFFFFF"
-            w = d.texto(c, p, x, y, tam, color, alinear="izquierda", tipo="titulo", contorno=10, a=int(255 * a))
+            marcada = _norm(p) in marcadas and marcadas
+            if ESTILO["nombre"] == "tinta":  # letras gordas extruidas tipo caricatura
+                T = TINTA_TXT
+                prof = max(6, int(tam * 0.13))
+                for k in range(prof, 0, -1):
+                    d.texto(c, p, x + k * 0.45, y + k, tam, T["tinta"], alinear="izquierda", tipo="titulo", contorno=14, color_contorno=T["tinta"], a=int(255 * a), sombra=False)
+                for k in range(prof, 0, -1):
+                    d.texto(c, p, x + k * 0.45, y + k, tam, T["extrusion"], alinear="izquierda", tipo="titulo", a=int(255 * a), sombra=False)
+                w = d.texto(c, p, x, y, tam, T["destacado"] if marcada else T["relleno"], alinear="izquierda", tipo="titulo",
+                            contorno=8, color_contorno=T["tinta"], a=int(255 * a), sombra=False)
+            else:
+                color = AMARILLO if marcada else "#FFFFFF"
+                w = d.texto(c, p, x, y, tam, color, alinear="izquierda", tipo="titulo", contorno=10, a=int(255 * a))
             x += w + espacio
 
 
 def render_clips(guion, duraciones, carpeta, ruta_animacion):
     os.makedirs(carpeta, exist_ok=True)
+    aplicar_estilo(guion)
     mod = cargar_modulo(ruta_animacion)
     info = skia.ImageInfo.Make(W, H, skia.kRGBA_8888_ColorType, skia.kPremul_AlphaType)
     surf = skia.Surface.MakeRaster(info)
@@ -95,6 +118,7 @@ def render_clips(guion, duraciones, carpeta, ruta_animacion):
 def previsualizar(guion, ruta_animacion, salida_png, momentos=(0.5,)):
     """Tira de cuadros (uno por escena) para revisar rápido sin generar el video."""
     from PIL import Image
+    aplicar_estilo(guion)
     mod = cargar_modulo(ruta_animacion)
     info = skia.ImageInfo.Make(W, H, skia.kRGBA_8888_ColorType, skia.kPremul_AlphaType)
     surf = skia.Surface.MakeRaster(info)

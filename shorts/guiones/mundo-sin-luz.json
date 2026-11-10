@@ -4,6 +4,7 @@
   "voz": "fr-FR-RemyMultilingualNeural",
   "velocidad": 1.08,
   "ruleta": "luz",
+  "estilo": "tinta",
   "animacion": "escenas/mundo-sin-luz.py",
   "escenas": [
     {"pantalla": "¿Cómo sería el mundo sin…?", "destacar": "mundo",

@@ -74,6 +74,8 @@ def fondo_espacio(c, t):
         x, y, r = rnd.uniform(0, W), rnd.uniform(0, H), rnd.uniform(0.8, 3)
         tw = 0.55 + 0.45 * math.sin(t * rnd.uniform(1, 4) + k)
         d.circulo(c, x, y, r, "#FFFFFF", a=int(220 * tw))
+    if d.TINTA:
+        d.destellos(c, t, n=16, semilla=4, y_max=H - 200)
     # luna que espía
     mx, my = 960, 560
     d.circulo(c, mx, my, 120, "#E9E4FF", shader=d.grad_radial(mx - 40, my - 40, 170, ["#FFFFFF", "#BDB4E8"]))
@@ -161,7 +163,7 @@ def rueda(c, rot, t, idx, gana=0.0, porciones=None):
         if k == idx and gana > 0:
             c.drawPath(pth, d.pintura("#FFFFFF", int(120 * gana * (0.6 + 0.4 * math.sin(t * 14)))))
         ang = math.radians(a0)
-        d.linea(c, 0, 0, R * math.cos(ang), R * math.sin(ang), "#FFE58A", ancho=7)
+        d.linea(c, 0, 0, R * math.cos(ang), R * math.sin(ang), d.TINTA["color"] if d.TINTA else "#FFE58A", ancho=9 if d.TINTA else 7)
     for k in range(12):
         ang = math.radians(-90 + k * 30 + 15)
         ex, ey = R * 0.68 * math.cos(ang), R * 0.68 * math.sin(ang)
@@ -169,6 +171,9 @@ def rueda(c, rot, t, idx, gana=0.0, porciones=None):
         d.circulo(c, ex + 6, ey + 10, 52, "#000000", a=60, blur=8)
         d.emoji(c, emo, ex, ey, 96, rot=math.degrees(ang) + 90)
     c.restore()
+    if d.TINTA:  # contornos de tinta del disco y del aro
+        d.circulo(c, CX, CY, R, d.TINTA["color"], trazo=d.TINTA["ancho"] + 2)
+        d.circulo(c, CX, CY, R + 26, d.TINTA["color"], trazo=d.TINTA["ancho"] + 2)
     # lamparitas del borde (persecución)
     for k in range(24):
         ang = math.radians(k * 15)

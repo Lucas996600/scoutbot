@@ -55,6 +55,8 @@ def col(c, a=255):
         return c
     if isinstance(c, str):
         c = c.lstrip("#")
+        if len(c) == 3:
+            c = "".join(ch * 2 for ch in c)
         r, g, b = int(c[0:2], 16), int(c[2:4], 16), int(c[4:6], 16)
         return skia.Color(r, g, b, a)
     if len(c) == 4:
@@ -66,6 +68,8 @@ def mezcla(c1, c2, t):
     def rgb(c):
         if isinstance(c, str):
             c = c.lstrip("#")
+            if len(c) == 3:
+                c = "".join(ch * 2 for ch in c)
             return [int(c[i:i + 2], 16) for i in (0, 2, 4)]
         return list(c[:3])
     a, b = rgb(c1), rgb(c2)
@@ -124,6 +128,30 @@ def camino(puntos, cerrado=True, suave=False, tension=0.5):
     return p
 
 
+# Modo "tinta" (cómic/caricatura plana con contorno grueso). Se activa con activar_tinta() o "estilo": "tinta" en el guion.
+TINTA = None
+
+
+def activar_tinta(color="#1B0F3A", ancho=7, plano=True):
+    global TINTA
+    TINTA = dict(color=color, ancho=ancho, plano=plano)
+
+
+def _tinta_aplica(area, a, blur, trazo, ancho=0):
+    return TINTA is not None and not blur and not trazo and a >= 150 and area < W * H * 0.35 and ancho < W * 0.85
+
+
+def _relleno(color, a, shader, area, blur, trazo, ancho=0):
+    if _tinta_aplica(area, a, blur, trazo, ancho) and TINTA["plano"] and shader is not None:
+        shader = None
+    return pintura(color, a, shader=shader, blur=blur, trazo=trazo)
+
+
+def _borde(c, dibujar, area, a, blur, trazo, ancho=0):
+    if _tinta_aplica(area, a, blur, trazo, ancho) and area > 120:
+        dibujar(pintura(TINTA["color"], a, trazo=TINTA["ancho"]))
+
+
 def figura(c, puntos, color, a=255, suave=True, sombra=0, trazo=None, borde=None, shader=None):
     """Polígono/forma (suave por defecto) con sombra opcional y borde opcional."""
     pth = camino(puntos, True, suave)
@@ -132,27 +160,52 @@ def figura(c, puntos, color, a=255, suave=True, sombra=0, trazo=None, borde=None
         c.translate(0, sombra * 0.5)
         c.drawPath(pth, pintura("#000000", 70, blur=sombra))
         c.restore()
-    c.drawPath(pth, pintura(color, a, shader=shader) if not trazo else pintura(color, a, trazo=trazo))
+    b = pth.computeTightBounds()
+    area = b.width() * b.height()
+    c.drawPath(pth, _relleno(color, a, shader, area, None, trazo, b.width()) if not trazo else pintura(color, a, trazo=trazo))
+    _borde(c, lambda p: c.drawPath(pth, p), area, a, None, trazo, b.width())
     if borde:
         c.drawPath(pth, pintura(borde[0], borde[2] if len(borde) > 2 else 255, trazo=borde[1]))
     return pth
 
 
 def circulo(c, x, y, r, color, a=255, blur=None, trazo=None, shader=None):
-    c.drawCircle(x, y, r, pintura(color, a, trazo=trazo, blur=blur, shader=shader))
+    area = 4 * r * r
+    c.drawCircle(x, y, r, _relleno(color, a, shader, area, blur, trazo))
+    _borde(c, lambda p: c.drawCircle(x, y, r, p), area, a, blur, trazo)
 
 
 def elipse(c, x, y, rx, ry, color, a=255, blur=None, trazo=None, shader=None):
-    c.drawOval(skia.Rect.MakeLTRB(x - rx, y - ry, x + rx, y + ry), pintura(color, a, trazo=trazo, blur=blur, shader=shader))
+    rr = skia.Rect.MakeLTRB(x - rx, y - ry, x + rx, y + ry)
+    area = 4 * rx * ry
+    c.drawOval(rr, _relleno(color, a, shader, area, blur, trazo, 2 * rx))
+    _borde(c, lambda p: c.drawOval(rr, p), area, a, blur, trazo, 2 * rx)
 
 
 def rect(c, x0, y0, x1, y1, color, a=255, radio=0, shader=None, blur=None, trazo=None):
     r = skia.Rect.MakeLTRB(x0, y0, x1, y1)
-    p = pintura(color, a, shader=shader, blur=blur, trazo=trazo)
+    area = abs((x1 - x0) * (y1 - y0))
+    an = abs(x1 - x0)
+    p = _relleno(color, a, shader, area, blur, trazo, an)
     if radio:
         c.drawRoundRect(r, radio, radio, p)
+        _borde(c, lambda q: c.drawRoundRect(r, radio, radio, q), area, a, blur, trazo, an)
     else:
         c.drawRect(r, p)
+        _borde(c, lambda q: c.drawRect(r, q), area, a, blur, trazo, an)
+
+
+def destellos(c, t, n=14, semilla=8, colores=("#E9FF8A", "#9FFFE0", "#FFFFFF"), y_max=None):
+    """Estrellitas de 4 puntas que titilan (look de caricatura retro)."""
+    import random as _r
+    rnd = _r.Random(semilla)
+    for k in range(n):
+        x, y = rnd.uniform(40, W - 40), rnd.uniform(60, y_max or H * 0.6)
+        tam = rnd.uniform(14, 34) * (0.7 + 0.3 * math.sin(t * rnd.uniform(2, 4) + k))
+        colr = colores[k % len(colores)]
+        pth = camino([(x, y - tam), (x + tam * 0.22, y - tam * 0.22), (x + tam, y), (x + tam * 0.22, y + tam * 0.22),
+                      (x, y + tam), (x - tam * 0.22, y + tam * 0.22), (x - tam, y), (x - tam * 0.22, y - tam * 0.22)], True, False)
+        c.drawPath(pth, pintura(colr))
 
 
 def linea(c, x0, y0, x1, y1, color, ancho=6, a=255):
