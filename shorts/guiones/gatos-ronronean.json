@@ -1,0 +1,27 @@
+{
+  "titulo": "¿Por qué ronronean los gatos? 🐱",
+  "descripcion": "No es solo felicidad: el ronroneo esconde mucho más. ¿Tu gato te manipula con el ronroneo? 👇",
+  "tema": "fuego",
+  "etiqueta": "¿SABÍAS QUÉ?",
+  "voz": "es-AR-TomasNeural",
+  "velocidad": 1.2,
+  "escenas": [
+    { "pantalla": "Tu gato no ronronea solo por felicidad", "destacar": "felicidad", "emoji": "🐱",
+      "voz": "Si creés que tu gato ronronea solo porque está feliz, te tengo una noticia." },
+    { "pantalla": "Tiene un motor en la garganta", "destacar": "motor", "emoji": "🔊",
+      "voz": "El ronroneo nace en la laringe: las cuerdas vocales vibran muy rápido, y lo hacen al inhalar y al exhalar. Por eso suena sin cortes." },
+    { "pantalla": "Hasta 150 vibraciones por segundo", "destacar": "vibraciones", "emoji": "〰️", "dato": "150",
+      "voz": "Esa vibración va más o menos de veinticinco a ciento cincuenta veces por segundo." },
+    { "pantalla": "Lo hacen desde bebés", "destacar": "bebés", "emoji": "🍼",
+      "voz": "Los gatitos ya ronronean a los pocos días de nacer, mientras toman la leche de su mamá." },
+    { "pantalla": "También ronronean cuando sufren", "destacar": "sufren", "emoji": "🩹",
+      "voz": "Pero ojo: también ronronean cuando están asustados, enfermos o con dolor. Se cree que les sirve para calmarse." },
+    { "pantalla": "¿Un sanador natural?", "destacar": "sanador", "emoji": "🦴",
+      "voz": "Hay incluso una teoría que dice que esas vibraciones podrían ayudar a sanar huesos y músculos, aunque todavía se está estudiando." },
+    { "pantalla": "Y hasta te manipulan", "destacar": "manipulan", "emoji": "😼",
+      "voz": "Y lo más loco: cuando tienen hambre, mezclan en el ronroneo un sonido agudo parecido al llanto de un bebé. Un estudio mostró que a los humanos nos cuesta ignorarlo." },
+    { "pantalla": "¿Tu gato te hace esto?", "destacar": "gato", "emoji": "👇",
+      "voz": "¿Tu gato te hace esto? Contame en los comentarios y seguime para más curiosidades." }
+  ],
+  "hashtags": ["#gatos", "#ronroneo", "#sabiasque", "#curiosidades", "#mascotas", "#datoscuriosos", "#fyp", "#parati"]
+}
