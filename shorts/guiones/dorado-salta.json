@@ -1,0 +1,26 @@
+{
+  "titulo": "¿Por qué el dorado salta cuando lo pescás? 🐟",
+  "descripcion": "El tigre del río no se deja atrapar fácil: salta, sacude la cabeza y corta la tanza. ¿Alguna vez pescaste uno? 👇",
+  "voz": "es-AR-TomasNeural",
+  "velocidad": 1.1,
+  "animacion": "escenas/dorado-salta.py",
+  "escenas": [
+    {"pantalla": "El pez que vuela para escaparse", "destacar": "vuela",
+     "voz": "En los ríos de Argentina hay un pez que, cuando lo enganchás, sale volando del agua para escaparse."},
+    {"pantalla": "Le dicen el tigre del río", "destacar": "tigre",
+     "voz": "Es el dorado, y le dicen el tigre del río. Vive en el Paraná, el Uruguay y el Río de la Plata, y es un cazador feroz."},
+    {"pantalla": "Puede pasar el metro de largo", "destacar": "metro",
+     "voz": "Puede pasar el metro de largo y los veinte kilos, y persigue cardúmenes enteros de sábalos."},
+    {"pantalla": "Salta para soltar el anzuelo", "destacar": "anzuelo",
+     "voz": "Cuando siente el anzuelo, en vez de esconderse en el fondo, salta y sacude la cabeza en el aire para soltarse."},
+    {"pantalla": "Su boca es casi de hueso", "destacar": "hueso",
+     "voz": "Y juega con ventaja: su boca es durísima, casi de hueso, así que al anzuelo le cuesta clavarse y en cada salto se puede zafar."},
+    {"pantalla": "Sus dientes cortan la tanza", "destacar": "dientes",
+     "voz": "Encima tiene dientes filosos que cortan la tanza. Por eso muchos pescadores usan un cable de acero."},
+    {"pantalla": "No es el único, pero sí el más famoso", "destacar": "famoso",
+     "voz": "No es el único pez que salta, pero en Argentina ninguno es tan famoso por eso. Y en muchos lugares se pesca con devolución: se suelta vivo al río."},
+    {"pantalla": "¿Pescaste alguno?", "destacar": "alguno",
+     "voz": "¿Alguna vez pescaste un dorado? Contame en los comentarios y seguime para más curiosidades."}
+  ],
+  "hashtags": ["#dorado", "#pesca", "#pescadeportiva", "#argentina", "#sabiasque", "#curiosidades", "#fyp", "#parati"]
+}
