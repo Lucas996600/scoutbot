@@ -1,0 +1,24 @@
+{
+  "titulo": "¿Cómo duermen los tiburones? 🦈",
+  "descripcion": "Algunos duermen nadando, otros en cuevas… y a veces con los ojos abiertos. ¿Lo sabías? 👇",
+  "voz": "es-AR-TomasNeural",
+  "velocidad": 1.05,
+  "animacion": "escenas/tiburones-duermen.py",
+  "escenas": [
+    {"pantalla": "Hay tiburones que duermen nadando", "destacar": "nadando",
+     "voz": "¿Sabías que hay tiburones que descansan mientras siguen nadando? Y no, no es un mito."},
+    {"pantalla": "Si se quedan quietos, les falta aire", "destacar": "aire",
+     "voz": "Muchos, como el tiburón blanco, respiran gracias al agua que les entra por la boca y les pasa por las branquias al nadar. Si se quedan quietos, les llega menos oxígeno."},
+    {"pantalla": "Un blanco filmado durmiendo", "destacar": "durmiendo",
+     "voz": "En dos mil dieciséis filmaron a un tiburón blanco en un estado parecido al sueño: nadaba despacito, contra la corriente y con la boca abierta."},
+    {"pantalla": "¿Nada en piloto automático?", "destacar": "automático",
+     "voz": "Los científicos creen que su médula espinal podría mantener el nado, como un piloto automático, mientras el cerebro descansa."},
+    {"pantalla": "Otros duermen en cuevas", "destacar": "cuevas",
+     "voz": "Otros, como el tiburón nodriza, sí se acuestan en el fondo o en cuevas, y bombean agua a sus branquias con la boca."},
+    {"pantalla": "A veces, con los ojos abiertos", "destacar": "abiertos",
+     "voz": "Y lo más loco: en un estudio, unos tiburones dormían acostados gastando mucha menos energía, y de noche varias veces lo hacían con los ojos abiertos."},
+    {"pantalla": "¿Vos lo sabías?", "destacar": "sabías",
+     "voz": "¿Vos sabías que los tiburones duermen así? Contame en los comentarios y seguime para más curiosidades."}
+  ],
+  "hashtags": ["#tiburones", "#oceano", "#animales", "#sabiasque", "#curiosidades", "#datoscuriosos", "#fyp", "#parati"]
+}
