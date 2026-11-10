@@ -1,0 +1,24 @@
+{
+  "titulo": "El animal que se regenera: si pierde una pata, le vuelve a crecer 🦎",
+  "descripcion": "El ajolote rearma patas, cola y hasta tejido del corazón… sin cicatriz. ¿Qué parte te gustaría regenerar a vos? 👇",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.08,
+  "animacion": "escenas/ajolote-regenera.py",
+  "escenas": [
+    {"pantalla": "Pierde una pata… y le vuelve a crecer", "destacar": "crecer",
+     "voz": "¿Sabías que existe un animal al que, si pierde una pata… le vuelve a crecer entera?"},
+    {"pantalla": "Se llama ajolote", "destacar": "ajolote",
+     "voz": "Se llama ajolote. Vive en los canales de Xochimilco, en México… y parece que siempre está sonriendo."},
+    {"pantalla": "Regenera casi todo", "destacar": "todo",
+     "voz": "Puede regenerar patas, la cola, partes de la médula espinal… ¡y hasta tejido del corazón!"},
+    {"pantalla": "El secreto: el blastema", "destacar": "blastema",
+     "voz": "Cuando se lastima, sus células forman un bultito llamado blastema, que vuelve a armar la pata completa: huesos, músculos y nervios. ¡Y sin dejar cicatriz!"},
+    {"pantalla": "¿Y nosotros?", "destacar": "nosotros",
+     "voz": "¿Y nosotros? Lo más parecido es el hígado, que puede volver a crecer. Por eso los científicos estudian al ajolote: quieren descubrir su secreto."},
+    {"pantalla": "Pero hay uno más loco", "destacar": "loco",
+     "voz": "Pero hay un gusanito todavía más increíble: la planaria. Si la cortás en pedacitos… ¡cada uno se convierte en un gusano nuevo!"},
+    {"pantalla": "¿Qué te gustaría regenerar?", "destacar": "regenerar",
+     "voz": "¿Qué parte de tu cuerpo te gustaría poder regenerar? Contame en los comentarios… ¡y seguime para más curiosidades!"}
+  ],
+  "hashtags": ["#ajolote", "#axolotl", "#animales", "#sabiasque", "#curiosidades", "#ciencia", "#fyp", "#parati"]
+}
