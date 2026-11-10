@@ -23,6 +23,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(AQUI)
 sys.path.insert(0, os.path.join(AQUI, "motor"))
 import reel_textos  # noqa: E402
+import reel_ilustrado  # noqa: E402
 
 MPT = os.environ.get("MPT_DIR", os.path.join(os.path.dirname(REPO), "tools", "MoneyPrinterTurbo"))
 CA = "/root/.ccr/ca-bundle.crt"
@@ -93,7 +94,7 @@ def main():
     open(log, "w").close()
 
     voz = a.voz or g.get("voz", "es-AR-TomasNeural")
-    genero = g.get("voz_genero") or ("Female" if any(n in voz for n in ("Elena", "Dalia", "Elvira", "Ximena", "Sofia", "Valentina")) else "Male")
+    genero = g.get("voz_genero") or ("Female" if any(n in voz for n in ("Elena", "Dalia", "Elvira", "Ximena", "Sofia", "Valentina", "Ava", "Emma", "Seraphina")) else "Male")
     vel = a.velocidad or g.get("velocidad", 1.2)
     guion_txt = " ".join(e["voz"].strip() for e in g["escenas"])
     comunes = ["--video-script", guion_txt, "--video-language", "es", "--video-aspect", "9:16",
@@ -109,7 +110,11 @@ def main():
     print(f"   audio {total:.1f} s · escenas {durs}", flush=True)
 
     print("2/4 Animando escenas…", flush=True)
-    clips = reel_textos.render_clips(g, durs, os.path.join(salida, "clips"))
+    if g.get("animacion"):
+        anim = g["animacion"] if os.path.isabs(g["animacion"]) else os.path.join(AQUI, g["animacion"])
+        clips = reel_ilustrado.render_clips(g, durs, os.path.join(salida, "clips"), anim)
+    else:
+        clips = reel_textos.render_clips(g, durs, os.path.join(salida, "clips"))
 
     print("3/4 Armando el video final…", flush=True)
     t2 = str(uuid.uuid4())
@@ -119,7 +124,8 @@ def main():
                    "--bgm-type", "random", "--bgm-volume", str(g.get("volumen_musica", 0.15)),
                    "--font-name", "BeVietnamPro-Bold.ttf", "--font-size", "84",
                    "--text-fore-color", "#FFFFFF", "--stroke-color", "#000000", "--stroke-width", "2.5",
-                   "--subtitle-position", "custom", "--custom-position", "76",
+                   "--subtitle-position", "custom", "--custom-position", str(g.get("posicion_subtitulos", 86 if g.get("animacion") else 76)),
+                   "--subtitle-background-enabled", "--subtitle-background-color", "#000000", "--rounded-subtitle-background",
                    "--subtitle-display-mode", "word_by_word", "--subtitle-animation", "pop_spring",
                    "--task-id", t2], log)
     tarea2 = os.path.join(MPT, "storage", "tasks", t2)
