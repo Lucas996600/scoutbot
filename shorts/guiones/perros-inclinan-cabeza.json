@@ -1,0 +1,24 @@
+{
+  "titulo": "¿Por qué los perros inclinan la cabeza cuando les hablás? 🐶",
+  "descripcion": "Ese gesto que nos derrite tiene explicación científica. ¿Tu perro la inclina? ¿Para qué lado? 👇",
+  "voz": "es-AR-TomasNeural",
+  "velocidad": 1.05,
+  "animacion": "escenas/perros-inclinan-cabeza.py",
+  "escenas": [
+    {"pantalla": "Inclina la cabeza… ¿te entiende?", "destacar": "entiende",
+     "voz": "Le hablás a tu perro y él inclina la cabeza, como si te entendiera. Bueno… puede que sí."},
+    {"pantalla": "Lo estudiaron en serio", "destacar": "estudiaron",
+     "voz": "En dos mil veintiuno, científicos de Hungría estudiaron a perros que se sabían los nombres de un montón de juguetes."},
+    {"pantalla": "Los genios la inclinaban mucho más", "destacar": "genios",
+     "voz": "Cuando el dueño decía el nombre de un juguete, esos perros genios inclinaban la cabeza el cuarenta y tres por ciento de las veces. Los perros comunes, apenas el dos."},
+    {"pantalla": "Sería su cara de pensar", "destacar": "pensar",
+     "voz": "Los científicos creen que lo hacen cuando escuchan algo importante y tratan de recordarlo, como si se imaginaran el juguete."},
+    {"pantalla": "Siempre para el mismo lado", "destacar": "mismo",
+     "voz": "Y algo muy curioso: cada perro la inclinaba siempre para el mismo lado. Unos a la derecha y otros a la izquierda."},
+    {"pantalla": "Hay más teorías", "destacar": "teorías",
+     "voz": "Hay otras teorías: que así ubican mejor de dónde viene tu voz, o que el hocico no les tape tu cara. Y como a nosotros nos encanta, lo repiten."},
+    {"pantalla": "¿Tu perro lo hace?", "destacar": "perro",
+     "voz": "¿Tu perro inclina la cabeza? ¿Para qué lado? Contame en los comentarios y seguime para más curiosidades."}
+  ],
+  "hashtags": ["#perros", "#mascotas", "#sabiasque", "#curiosidades", "#perro", "#datoscuriosos", "#fyp", "#parati"]
+}
