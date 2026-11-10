@@ -1,0 +1,24 @@
+{
+  "titulo": "¿Qué pasaría si el planeta se queda sin luz? Parte 1 ⚡",
+  "descripcion": "Las primeras horas de un apagón mundial… y lo que aparece en el cielo. Parte 2 en mi perfil 👀",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.05,
+  "animacion": "escenas/apagon-1.py",
+  "escenas": [
+    {"pantalla": "¿Y si el planeta se queda sin luz?", "destacar": "luz",
+     "voz": "¿Qué pasaría si mañana, a las ocho de la noche, todo el planeta se quedara sin luz? Parte uno: las primeras horas."},
+    {"pantalla": "Todo se apaga en segundos", "destacar": "segundos",
+     "voz": "En segundos, las ciudades se apagan. Los semáforos mueren… y el tránsito se vuelve un caos."},
+    {"pantalla": "Miles quedan atrapados", "destacar": "atrapados",
+     "voz": "Miles de personas quedan atrapadas en ascensores y en trenes subterráneos, a oscuras."},
+    {"pantalla": "Tu celular, contra reloj", "destacar": "reloj",
+     "voz": "Tu celular todavía anda… pero las antenas funcionan con baterías de respaldo que duran unas horas. Después: sin señal."},
+    {"pantalla": "Los hospitales resisten", "destacar": "resisten",
+     "voz": "Los hospitales prenden sus generadores. Pero dependen del combustible que tengan guardado."},
+    {"pantalla": "Aparece un cielo olvidado", "destacar": "cielo",
+     "voz": "Y entonces, mirás para arriba. Se cuenta que en el apagón de Los Ángeles de mil novecientos noventa y cuatro, hubo gente que llamó asustada por una nube plateada en el cielo… era la Vía Láctea."},
+    {"pantalla": "Lo peor empieza mañana", "destacar": "mañana",
+     "voz": "Pero lo peor no pasa esta noche… empieza mañana. Seguime para ver la parte dos."}
+  ],
+  "hashtags": ["#apagon", "#quepasariasi", "#sinluz", "#curiosidades", "#sabiasque", "#ciencia", "#fyp", "#parati"]
+}
