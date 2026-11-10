@@ -1,0 +1,26 @@
+{
+  "titulo": "¿Cómo funciona el wifi de tu casa? 📶",
+  "descripcion": "Tu wifi es luz invisible que te atraviesa todo el día. Y una pecera o el microondas te la pueden arruinar. ¿Dónde tenés tu router? 👇",
+  "voz": "es-AR-TomasNeural",
+  "velocidad": 1.1,
+  "animacion": "escenas/wifi-casa.py",
+  "escenas": [
+    {"pantalla": "Tu wifi es luz invisible", "destacar": "invisible",
+     "voz": "El wifi de tu casa es, literalmente, una luz que tus ojos no pueden ver. Y te está atravesando ahora mismo."},
+    {"pantalla": "Todo empieza en el router", "destacar": "router",
+     "voz": "Internet llega a tu casa por un cable o por fibra óptica hasta el router, y él convierte esos datos en ondas de radio."},
+    {"pantalla": "Vibra 2.400 millones de veces por segundo", "destacar": "millones",
+     "voz": "Esas ondas vibran dos mil cuatrocientos millones de veces por segundo. Por eso tu router dice dos coma cuatro o cinco gigahercios."},
+    {"pantalla": "Tus fotos viajan en unos y ceros", "destacar": "ceros",
+     "voz": "Cada foto, mensaje o video se parte en pedacitos de unos y ceros, y viaja montado en esas ondas hasta tu celular."},
+    {"pantalla": "Tu celular le contesta", "destacar": "contesta",
+     "voz": "Y no es de ida nomás: tu celular le contesta al router todo el tiempo para confirmar que cada pedacito llegó bien."},
+    {"pantalla": "Una pecera puede frenar tu wifi", "destacar": "pecera",
+     "voz": "Pero ojo: el agua absorbe estas ondas. Si ponés una pecera entre el router y vos, la señal se debilita."},
+    {"pantalla": "Usa casi la onda del microondas", "destacar": "microondas",
+     "voz": "Y lo más loco: el wifi de dos coma cuatro usa casi la misma frecuencia que el microondas. Por eso, cuando calentás comida, a veces se te corta."},
+    {"pantalla": "¿Dónde tenés tu router?", "destacar": "router",
+     "voz": "Un consejo: ponelo alto y en el centro de la casa. ¿Vos dónde lo tenés? Contame en los comentarios y seguime para más curiosidades."}
+  ],
+  "hashtags": ["#wifi", "#tecnologia", "#sabiasque", "#curiosidades", "#internet", "#datoscuriosos", "#fyp", "#parati"]
+}

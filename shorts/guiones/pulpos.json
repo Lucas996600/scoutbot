@@ -1,0 +1,25 @@
+{
+  "titulo": "El pulpo es casi un alien 🐙",
+  "descripcion": "Tres corazones, sangre azul y brazos que piensan solos. ¿Cuál te sorprendió más?",
+  "tema": "noche",
+  "etiqueta": "¿SABÍAS QUÉ?",
+  "voz": "es-AR-TomasNeural",
+  "velocidad": 1.2,
+  "escenas": [
+    { "pantalla": "El pulpo es lo más parecido a un alien", "destacar": "alien", "emoji": "🐙",
+      "voz": "El pulpo es lo más parecido a un alien que existe en la Tierra. Y te voy a demostrar por qué." },
+    { "pantalla": "Tiene tres corazones", "destacar": "tres", "emoji": "❤️", "dato": "3",
+      "voz": "Para empezar, tiene tres corazones: dos bombean sangre a las branquias y uno al resto del cuerpo." },
+    { "pantalla": "Y su sangre es azul", "destacar": "azul", "emoji": "🩸",
+      "voz": "Y su sangre no es roja, es azul, porque usa cobre en lugar de hierro para llevar el oxígeno." },
+    { "pantalla": "Sus brazos piensan solos", "destacar": "piensan", "emoji": "🧠",
+      "voz": "Pero lo más loco está en sus brazos: cerca de dos tercios de sus neuronas están ahí, así que cada brazo puede reaccionar casi por su cuenta." },
+    { "pantalla": "Dos tercios de sus neuronas", "destacar": "neuronas", "emoji": "⚡", "dato": "2/3",
+      "voz": "O sea, gran parte de lo que piensa un pulpo no pasa por su cabeza." },
+    { "pantalla": "Se escapa con una nube de tinta", "destacar": "tinta", "emoji": "💨",
+      "voz": "Cuando un depredador lo encuentra, larga una nube de tinta y desaparece en segundos." },
+    { "pantalla": "¿Cuál te sorprendió más?", "destacar": "sorprendió", "emoji": "👇",
+      "voz": "Contame en los comentarios cuál te voló la cabeza, y seguime para más curiosidades." }
+  ],
+  "hashtags": ["#pulpo", "#sabiasque", "#curiosidades", "#animales", "#datoscuriosos", "#ciencia", "#fyp", "#parati"]
+}
