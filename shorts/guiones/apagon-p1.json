@@ -1,0 +1,22 @@
+{
+  "titulo": "¿Y si el planeta entero se queda sin luz? Parte 1 ⚡",
+  "descripcion": "La primera noche de un apagón mundial… y lo que aparece en el cielo. Parte 2 en mi perfil 👀",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.08,
+  "animacion": "escenas/apagon-p1.py",
+  "escenas": [
+    {"pantalla": "El planeta entero, a oscuras", "destacar": "oscuras",
+     "voz": "¡Ocho de la noche… y el planeta entero se queda sin luz!"},
+    {"pantalla": "Todo se apaga en segundos", "destacar": "segundos",
+     "voz": "Las ciudades se apagan en segundos. Los semáforos mueren… y el tránsito se vuelve un caos."},
+    {"pantalla": "Miles quedan atrapados", "destacar": "atrapados",
+     "voz": "Miles de personas quedan encerradas en ascensores y en el subte, en plena oscuridad."},
+    {"pantalla": "Tu celular, contra reloj", "destacar": "reloj",
+     "voz": "Tu celular anda… pero las antenas tienen baterías de respaldo que duran unas horas. Después: sin señal."},
+    {"pantalla": "Aparece un cielo olvidado", "destacar": "cielo",
+     "voz": "Y cuando mirás para arriba… ves miles de estrellas que la luz de la ciudad te tapaba. ¡Hasta la Vía Láctea!"},
+    {"pantalla": "Lo peor empieza mañana", "destacar": "mañana",
+     "voz": "Pero esto es solo la primera noche. Lo peor empieza mañana… La parte dos está en mi perfil."}
+  ],
+  "hashtags": ["#apagon", "#quepasariasi", "#sinluz", "#curiosidades", "#sabiasque", "#ciencia", "#fyp", "#parati"]
+}

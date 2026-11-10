@@ -78,7 +78,8 @@ def render_clips(guion, duraciones, carpeta, ruta_animacion):
             mod.escena(c, i, lt, gt0 + lt, duraciones[i], esc)
             c.restore()
             d.vineta(c, 120)
-            titulo(c, esc.get("pantalla", ""), esc.get("destacar", ""), lt)
+            # en la 1ª escena el título ya está visible desde el cuadro 0 (gancho + miniatura)
+            titulo(c, esc.get("pantalla", ""), esc.get("destacar", ""), lt if i > 0 else 1.0)
             # fundido corto de entrada entre escenas
             if i > 0 and lt < 0.2:
                 d.rect(c, 0, 0, W, H, "#000000", a=int(200 * (1 - lt / 0.2)))

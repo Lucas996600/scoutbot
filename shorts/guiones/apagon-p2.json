@@ -1,0 +1,24 @@
+{
+  "titulo": "¿Y si el planeta entero se queda sin luz? Parte 2 ⚡",
+  "descripcion": "Día 2 del apagón mundial: agua, comida, nafta… y las centrales nucleares. ¿Vos qué harías primero? 👇",
+  "voz": "fr-FR-RemyMultilingualNeural",
+  "velocidad": 1.08,
+  "animacion": "escenas/apagon-p2.py",
+  "escenas": [
+    {"pantalla": "Día 2 sin luz en el planeta", "destacar": "Día",
+     "voz": "¡Día dos sin luz en todo el planeta! Y ahora sí… empiezan los problemas."},
+    {"pantalla": "Se corta el agua", "destacar": "agua",
+     "voz": "En muchos edificios, el agua sube gracias a bombas eléctricas. Sin luz… la canilla deja de largar agua."},
+    {"pantalla": "La heladera, cuenta regresiva", "destacar": "heladera",
+     "voz": "La heladera mantiene la comida fría unas cuatro horas con la puerta cerrada. El freezer lleno, unos dos días."},
+    {"pantalla": "Hay nafta, pero no sale", "destacar": "nafta",
+     "voz": "Los surtidores de nafta son eléctricos: aunque haya combustible, no lo pueden bombear. Y los cajeros tampoco andan."},
+    {"pantalla": "Las centrales nucleares preocupan", "destacar": "nucleares",
+     "voz": "Lo que más preocupa: las centrales nucleares necesitan electricidad para enfriar sus reactores. Usan generadores diésel… mientras dure el combustible."},
+    {"pantalla": "Pero la naturaleza respira", "destacar": "naturaleza",
+     "voz": "Mientras tanto, sin luces artificiales, las tortuguitas recién nacidas encuentran el mar guiándose por el brillo del horizonte."},
+    {"pantalla": "¿Qué harías primero?", "destacar": "primero",
+     "voz": "¿Y vos? ¿Qué sería lo primero que harías en un apagón mundial? Contame en los comentarios y seguime para más."}
+  ],
+  "hashtags": ["#apagon", "#quepasariasi", "#sinluz", "#curiosidades", "#sabiasque", "#ciencia", "#fyp", "#parati"]
+}
